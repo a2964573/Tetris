@@ -6,19 +6,19 @@ BUILDDIR = ..\build
 USER_SRC = user.cpp
 UTIL_SRC = util.cpp
 
-USER_DLL = $(BUILDDIR)\user.dll
-UTIL_DLL = $(BUILDDIR)\util.dll
+USER_LIB = $(BUILDDIR)\user.lib
+UTIL_LIB = $(BUILDDIR)\util.lib
 
-all: $(USER_DLL) $(UTIL_DLL)
+all: $(USER_LIB) $(UTIL_LIB)
 
-$(USER_DLL): $(USER_SRC)
+$(USER_LIB): $(USER_SRC)
 	@if not exist $(BUILDDIR) mkdir $(BUILDDIR)
-	$(CXX) $(CXXFLAGS) -o $(USER_DLL) $(USER_SRC)
+	$(CXX) $(CXXFLAGS) -o $(USER_LIB) $(USER_SRC)
 
-$(UTIL_DLL): $(UTIL_SRC)
+$(UTIL_LIB): $(UTIL_SRC)
 	@if not exist $(BUILDDIR) mkdir $(BUILDDIR)
-	$(CXX) $(CXXFLAGS) -o $(UTIL_DLL) $(UTIL_SRC)
+	$(CXX) $(CXXFLAGS) -o $(UTIL_LIB) $(UTIL_SRC)
 
 clean:
-	del /Q $(USER_DLL)
-	del /Q $(UTIL_DLL)
+	del /Q $(USER_LIB)
+	del /Q $(UTIL_LIB)
