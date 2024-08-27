@@ -2,7 +2,11 @@
 
 int main()
 {
-    std::cout << "Welcome to the Tetris!!" << std::endl;
+    User user = User();
+    Util util = Util();
+
+    std::cout << "Running Tetris Main" << std::endl;
+
 
     return 0;
 }
