@@ -2,6 +2,9 @@
 *.exe
 */*.exe
 
-# compile file
+# build file
+build
 *.o
 */*.o
+*.dll
+*/*.dll

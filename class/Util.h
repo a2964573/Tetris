@@ -15,6 +15,8 @@ class Util
         ~Util();
 
         int utilClearScreen(int os_type);
+        int utilPrintDescription(const std::string desc);
+        int utilInputString(std::string output);
 };
 
 

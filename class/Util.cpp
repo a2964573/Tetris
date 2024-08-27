@@ -26,3 +26,17 @@ int Util::utilClearScreen(int os_type)
 
     return 0;
 }
+
+int Util::utilPrintDescription(const std::string desc)
+{
+    std::string description = "echo " + desc;
+    system(description.c_str());
+
+    return 0;
+}
+
+int Util::utilInputString(std::string output)
+{
+    std::getline(std::cin, output);
+    return output.length();
+}
