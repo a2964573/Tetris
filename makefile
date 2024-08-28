@@ -11,12 +11,13 @@ OBJS = 	$(BUILDDIR)/Util.o \
 
 TARGET = tetris.exe
 
-all: $(TARGET)
+all: subdirs $(TARGET)
 
 $(TARGET): $(OBJS)
 	$(CXX) $(CXXFLAGS) -o $@ $(OBJS)
 
 $(BUILDDIR)/main.o: main.cpp
+	@if [ ! -d $(BUILDDIR) ]; then mkdir -p $(BUILDDIR); fi
 	$(CXX) $(CXXFLAGS) -c main.cpp -o $(BUILDDIR)/main.o
 
 subdirs :
@@ -25,4 +26,5 @@ subdirs :
 	done
 
 clean:
-	rm -f $(BUILDDIR)\*.o
+	rm -f $(BUILDDIR)/*.o
+	rm -f $(TARGET)
