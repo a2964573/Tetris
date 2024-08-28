@@ -71,7 +71,7 @@
       "containerId": "BsACZwFeoX5PWbwPUqHv7",
       "originalText": "client",
       "lineHeight": 1.25,
-      "baseline": 20
+      "baseline": 21
     },
     {
       "type": "rectangle",
@@ -141,7 +141,7 @@
       "containerId": "TkakKKuFsD6BkkUA0Y2Cz",
       "originalText": "server",
       "lineHeight": 1.25,
-      "baseline": 20
+      "baseline": 21
     },
     {
       "type": "line",
@@ -277,8 +277,8 @@
     },
     {
       "type": "text",
-      "version": 176,
-      "versionNonce": 304234653,
+      "version": 177,
+      "versionNonce": 255093672,
       "isDeleted": false,
       "id": "Cu-03PtlwCrhgjGuFbXxK",
       "fillStyle": "solid",
@@ -298,7 +298,7 @@
       "frameId": null,
       "roundness": null,
       "boundElements": [],
-      "updated": 1724737474757,
+      "updated": 1724848980288,
       "link": null,
       "locked": false,
       "fontSize": 20,
@@ -309,12 +309,12 @@
       "containerId": null,
       "originalText": "request login",
       "lineHeight": 1.25,
-      "baseline": 17
+      "baseline": 18
     },
     {
       "type": "text",
-      "version": 73,
-      "versionNonce": 1217749939,
+      "version": 74,
+      "versionNonce": 2102887128,
       "isDeleted": false,
       "id": "THYdIYZYDzgvkeCmKpZgL",
       "fillStyle": "solid",
@@ -334,7 +334,7 @@
       "frameId": null,
       "roundness": null,
       "boundElements": [],
-      "updated": 1724737474758,
+      "updated": 1724848980289,
       "link": null,
       "locked": false,
       "fontSize": 20,
@@ -345,7 +345,7 @@
       "containerId": null,
       "originalText": "check",
       "lineHeight": 1.25,
-      "baseline": 17
+      "baseline": 18
     },
     {
       "type": "arrow",
@@ -393,8 +393,8 @@
     },
     {
       "type": "text",
-      "version": 47,
-      "versionNonce": 1084892413,
+      "version": 48,
+      "versionNonce": 1207482024,
       "isDeleted": false,
       "id": "6i8vQvYl5-zbM466LqpXf",
       "fillStyle": "solid",
@@ -414,7 +414,7 @@
       "frameId": null,
       "roundness": null,
       "boundElements": [],
-      "updated": 1724737474758,
+      "updated": 1724848980289,
       "link": null,
       "locked": false,
       "fontSize": 20,
@@ -425,7 +425,7 @@
       "containerId": null,
       "originalText": "response login",
       "lineHeight": 1.25,
-      "baseline": 17
+      "baseline": 18
     }
   ],
   "appState": {
