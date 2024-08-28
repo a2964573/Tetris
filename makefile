@@ -2,14 +2,27 @@ CXX = g++
 CXXFLAGS = -Wall -g
 
 BUILDDIR = build
+SUBDIRS  = class framework
 
-SOURCE = main.cpp
+OBJS = 	$(BUILDDIR)/Util.o \
+		$(BUILDDIR)/User.o \
+		$(BUILDDIR)/login.o \
+		$(BUILDDIR)/main.o
 
 TARGET = tetris.exe
 
-$(TARGET): $(SOURCE)
-	@if not exist $(BUILDDIR) mkdir $(BUILDDIR)
-	$(CXX) $(CXXFLAGS) -o $(TARGET) $(SOURCE) -L $(BUILDDIR) -lutil -luser -llogin
+all: $(TARGET)
+
+$(TARGET): $(OBJS)
+	$(CXX) $(CXXFLAGS) -o $@ $(OBJS)
+
+$(BUILDDIR)/main.o: main.cpp
+	$(CXX) $(CXXFLAGS) -c main.cpp -o $(BUILDDIR)/main.o
+
+subdirs :
+	for dir in $(SUBDIRS); do \
+		$(MAKE) -C $$dir; \
+	done
 
 clean:
-	del /Q $(TARGET)
+	rm -f $(BUILDDIR)\*.o

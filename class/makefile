@@ -1,24 +1,20 @@
 CXX = g++
-CXXFLAGS = -Wall -g -shared
+CXXFLAGS = -Wall -g
 
-BUILDDIR = ..\build
+BUILDDIR = ../build
 
-USER_SRC = user.cpp
-UTIL_SRC = util.cpp
+OBJS = 	$(BUILDDIR)/User.o \
+		$(BUILDDIR)/Util.o
 
-USER_LIB = $(BUILDDIR)\user.lib
-UTIL_LIB = $(BUILDDIR)\util.lib
+all: $(OBJS)
 
-all: $(USER_LIB) $(UTIL_LIB)
-
-$(USER_LIB): $(USER_SRC)
+$(BUILDDIR)/Util.o: Util.cpp
 	@if not exist $(BUILDDIR) mkdir $(BUILDDIR)
-	$(CXX) $(CXXFLAGS) -o $(USER_LIB) $(USER_SRC)
+	$(CXX) $(CXXFLAGS) -c Util.cpp -o $(BUILDDIR)/Util.o
 
-$(UTIL_LIB): $(UTIL_SRC)
+$(BUILDDIR)/User.o: User.cpp
 	@if not exist $(BUILDDIR) mkdir $(BUILDDIR)
-	$(CXX) $(CXXFLAGS) -o $(UTIL_LIB) $(UTIL_SRC)
+	$(CXX) $(CXXFLAGS) -c User.cpp -o $(BUILDDIR)/User.o
 
 clean:
-	del /Q $(USER_LIB)
-	del /Q $(UTIL_LIB)
+	rm -f $(OBJS)
