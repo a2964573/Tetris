@@ -8,3 +8,8 @@ build
 */*.o
 *.dll
 */*.dll
+
+# ignore
+*.swp
+*/*.swp
+
