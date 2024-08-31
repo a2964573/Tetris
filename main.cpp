@@ -36,7 +36,6 @@ int main_proceduer()
 		} else {
 			util.utilPrintDescription("모드를 입력하시오.");
 			util.utilInputChar(mode);
-			std::cout << "입력된 모드 [" <<  mode << "]" << std::endl;
 			/*
 			if(mode = MODE_SETTING) {
 				rtn = settingProceduer(user);

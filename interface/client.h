@@ -19,6 +19,9 @@ class Client
         ~Client();
 		int clientSocketCreate();
 		int clientSocketConnect();
+		int clientSocketSend();
+		int clientSocketReceive();
+		int clientSocketClose();
 };
 
 #endif // _CLIENT_H

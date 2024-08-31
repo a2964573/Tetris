@@ -26,3 +26,18 @@ int Client::clientSocketConnect()
 	return 0;
 }
 
+int Client::clientSocketSend()
+{
+	return 0;
+}
+
+int Client::clientSocketReceive()
+{
+	return 0;
+}
+
+int Client::clientSocketClose()
+{
+	return 0;
+}
+
