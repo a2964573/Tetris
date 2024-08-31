@@ -12,4 +12,8 @@ build
 # ignore
 *.swp
 */*.swp
+*.ini
+*/*.ini
+*.env
+*/*.env
 

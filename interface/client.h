@@ -8,5 +8,18 @@
 #include <arpa/inet.h>
 #include <unistd.h>
 
+class Client
+{
+    private:
+
+    protected:
+
+    public:
+        Client();
+        ~Client();
+		int clientSocketCreate();
+		int clientSocketConnect();
+};
+
 #endif // _CLIENT_H
 

@@ -2,16 +2,30 @@
 
 User::User()
 {
-    _id      = "";
-    _name    = "";
-    _os_type = User::userSetOSType();
+	_login_state = false;
+    _id          = "";
+    _name        = "";
+    _os_type     = User::userSetOSType();
 }
 
 User::~User()
 {
-    _id      = "";
-    _name    = "";
-    _os_type = 0;
+	_login_state = false;
+    _id          = "";
+    _name        = "";
+    _os_type     = 0;
+}
+
+bool User::userGetLoginState()
+{
+    return _login_state;
+}
+
+int User::userSetLoginState(bool state)
+{
+    _login_state = state;
+
+    return 0;
 }
 
 std::string User::userGetId()
@@ -53,5 +67,6 @@ int User::userSetOSType()
         _os_type = OS_MACOS;
     #endif
 
-    return 0;
+    return _os_type;
 }
+

@@ -40,3 +40,4 @@ int Util::utilInputString(std::string& output)
     std::getline(std::cin, output);
     return output.length();
 }
+

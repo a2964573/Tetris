@@ -1,13 +1,7 @@
 #include "login.h"
 
-int login()
-{
-    
-
-    return 0;
-}
-
-int requestLogin()
+int login_proceduer(User& user)
 {
     return 0;
 }
+

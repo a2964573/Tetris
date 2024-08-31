@@ -7,6 +7,7 @@
 class User
 {
     private:
+		bool _login_state;
         std::string _id;
         std::string _name;
         int _os_type;
@@ -17,10 +18,12 @@ class User
         User();
         ~User();
 
+		bool userGetLoginState();
         std::string userGetId();
         std::string userGetName();
         int userGetOSType();
 
+		int userSetLoginState(bool state);
         int userSetId(const std::string& id);
         int userSetName(const std::string& name);
         int userSetOSType();

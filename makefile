@@ -6,6 +6,7 @@ SUBDIRS  = class interface framework
 
 OBJS = 	$(BUILDDIR)/Util.o \
 		$(BUILDDIR)/User.o \
+		$(BUILDDIR)/Environment.o \
 		$(BUILDDIR)/client.o \
 		$(BUILDDIR)/login.o \
 		$(BUILDDIR)/main.o
