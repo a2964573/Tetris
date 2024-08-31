@@ -16,8 +16,9 @@ class Util
 
         int utilClearScreen(int os_type);
         int utilPrintDescription(const std::string desc);
-        int utilInputString(std::string output);
+        int utilInputString(std::string& output);
 };
 
 
 #endif // _UTIL_H
+

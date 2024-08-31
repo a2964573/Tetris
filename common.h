@@ -7,3 +7,4 @@
 #include <vector>
 
 #endif // _COMMON_H
+

@@ -35,7 +35,7 @@ int Util::utilPrintDescription(const std::string desc)
     return 0;
 }
 
-int Util::utilInputString(std::string output)
+int Util::utilInputString(std::string& output)
 {
     std::getline(std::cin, output);
     return output.length();

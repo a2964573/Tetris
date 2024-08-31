@@ -2,10 +2,11 @@ CXX = g++
 CXXFLAGS = -Wall -g
 
 BUILDDIR = build
-SUBDIRS  = class framework
+SUBDIRS  = class interface framework
 
 OBJS = 	$(BUILDDIR)/Util.o \
 		$(BUILDDIR)/User.o \
+		$(BUILDDIR)/client.o \
 		$(BUILDDIR)/login.o \
 		$(BUILDDIR)/main.o
 
