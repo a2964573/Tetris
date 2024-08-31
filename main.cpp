@@ -21,8 +21,8 @@ int main_proceduer()
 	User user;
 	Util util;
 
-	// int mode = 0;
-	int rtn  = 0;
+	char mode;
+	int  rtn = 0;
 
 	while(true) {
 		util.utilClearScreen(user.userGetOSType());
@@ -34,6 +34,9 @@ int main_proceduer()
 			}
 			continue;
 		} else {
+			util.utilPrintDescription("모드를 입력하시오.");
+			util.utilInputChar(mode);
+			std::cout << "입력된 모드 [" <<  mode << "]" << std::endl;
 			/*
 			if(mode = MODE_SETTING) {
 				rtn = settingProceduer(user);
@@ -47,6 +50,7 @@ int main_proceduer()
 				rtn = gameProceduer(user);
 			}
 			*/
+			break;
 
 			if(rtn < 0) {
 				break;
