@@ -18,10 +18,10 @@ class Client
         Client();
         ~Client();
 		int clientSocketCreate();
-		int clientSocketConnect();
-		int clientSocketSend();
-		int clientSocketReceive();
-		int clientSocketClose();
+		int clientSocketConnect(int sockfd, std::string ip, std::string port);
+		int clientSocketSend(int sockfd, std::string sendData);
+		int clientSocketReceive(int sockfd, std::string& output);
+		int clientSocketClose(int sockfd);
 };
 
 #endif // _CLIENT_H
