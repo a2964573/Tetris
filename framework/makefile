@@ -1,15 +1,35 @@
 CXX = g++
 CXXFLAGS = -Wall -g
 
-BUILDDIR = ../build
+APPLYDIR = ../build/application
+BUILDDIR = ../build/framework
+CLASSDIR = ../build/class
+INTFCDIR = ../build/interface
 
-OBJS = $(BUILDDIR)/login.o
+OBJS =	$(BUILDDIR)/login.o \
+		$(BUILDDIR)/main.o \
 
-all: $(OBJS)
+CLSS =	$(CLASSDIR)/util.o \
+		$(CLASSDIR)/user.o \
+		$(CLASSDIR)/environment.o \
+		$(INTFCDIR)/client.o \
 
-$(BUILDDIR)/login.o: login.cpp
+TARGET = tetris.exe
+
+all: login main
+
+login: login.cpp
 	@if [ ! -d $(BUILDDIR) ]; then mkdir -p $(BUILDDIR); fi
 	$(CXX) $(CXXFLAGS) -c login.cpp -o $(BUILDDIR)/login.o
 
+main: main.cpp
+	@if [ ! -d $(BUILDDIR) ]; then mkdir -p $(BUILDDIR); fi
+	$(CXX) $(CXXFLAGS) -c main.cpp -o $(BUILDDIR)/main.o
+
 clean:
 	rm -f $(OBJS)
+
+upver:
+	rm -f $(APPLYDIR)/$(TARGET)
+	$(CXX) $(CXXFLAGS) -o $(APPLYDIR)/$(TARGET) $(CLSS) $(OBJS)
+

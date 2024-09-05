@@ -1,25 +1,25 @@
 CXX = g++
 CXXFLAGS = -Wall -g
 
-BUILDDIR = ../build
+BUILDDIR = ../build/class
 
-OBJS = 	$(BUILDDIR)/User.o \
-		$(BUILDDIR)/Util.o \
-		$(BUILDDIR)/Environment.o \
+OBJS =	$(BUILDDIR)/user.o \
+		$(BUILDDIR)/util.o \
+		$(BUILDDIR)/environment.o \
 
-all: $(OBJS)
+all: user util environment
 
-$(BUILDDIR)/User.o: User.cpp
+user: user.cpp
 	@if [ ! -d $(BUILDDIR) ]; then mkdir -p $(BUILDDIR); fi
-	$(CXX) $(CXXFLAGS) -c User.cpp -o $(BUILDDIR)/User.o
+	$(CXX) $(CXXFLAGS) -c user.cpp -o $(BUILDDIR)/user.o
 
-$(BUILDDIR)/Util.o: Util.cpp
+util: util.cpp
 	@if [ ! -d $(BUILDDIR) ]; then mkdir -p $(BUILDDIR); fi
-	$(CXX) $(CXXFLAGS) -c Util.cpp -o $(BUILDDIR)/Util.o
+	$(CXX) $(CXXFLAGS) -c util.cpp -o $(BUILDDIR)/util.o
 
-$(BUILDDIR)/Environment.o: Environment.cpp
+environment: environment.cpp
 	@if [ ! -d $(BUILDDIR) ]; then mkdir -p $(BUILDDIR); fi
-	$(CXX) $(CXXFLAGS) -c Environment.cpp -o $(BUILDDIR)/Environment.o
+	$(CXX) $(CXXFLAGS) -c environment.cpp -o $(BUILDDIR)/environment.o
 
 clean:
 	rm -f $(OBJS)

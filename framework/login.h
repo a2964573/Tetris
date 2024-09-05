@@ -1,11 +1,11 @@
 #ifndef _LOGIN_H
 #define _LOGIN_H
 
-#include "../common.h"
-#include "../define.h"
+#include "../include/common.h"
+#include "../include/define.h"
 
-#include "../class/User.h"
-#include "../class/Util.h"
+#include "../class/user.h"
+#include "../class/util.h"
 
 #include "../interface/client.h"
 

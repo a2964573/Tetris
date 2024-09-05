@@ -1,23 +1,26 @@
 CXX = g++
 CXXFLAGS = -Wall -g
 
-BUILDDIR = build
-SUBDIRS  = class interface framework
+CLASSODIR=	build/class
+INTDCODIR=	build/interface
+FRMWKODIR=	build/framework
+OBJECDIR =	$(CLASSODIR) \
+			$(INTDCODIR) \
+			$(FRMWKODIR)
+APPLYDIR =	build/application
 
-OBJS = 	$(BUILDDIR)/Util.o \
-		$(BUILDDIR)/User.o \
-		$(BUILDDIR)/Environment.o \
-		$(BUILDDIR)/client.o \
-		$(BUILDDIR)/login.o \
-		$(BUILDDIR)/main.o
+SUBDIRS  =  class interface framework
+
+OBJS = 	$(CLASSODIR)/util.o \
+		$(CLASSODIR)/user.o \
+		$(CLASSODIR)/environment.o \
+		$(INTDCODIR)/client.o \
+		$(FRMWKODIR)/login.o \
+		$(FRMWKODIR)/main.o
 
 TARGET = tetris.exe
 
-all: sub main
-
-main: main.cpp
-	@if [ ! -d $(BUILDDIR) ]; then mkdir -p $(BUILDDIR); fi
-	$(CXX) $(CXXFLAGS) -c main.cpp -o $(BUILDDIR)/main.o
+all: sub
 
 sub:
 	for dir in $(SUBDIRS); do \
@@ -25,11 +28,9 @@ sub:
 	done
 
 clean:
-	rm -f $(BUILDDIR)/main.o
-
-cleanall:
-	rm -f $(BUILDDIR)/*.o
+	rm -f $(OBJS)
 
 upver:
 	rm -f $(TARGET)
-	$(CXX) $(CXXFLAGS) -o $(TARGET) $(OBJS)
+	$(CXX) $(CXXFLAGS) -o $(APPLYDIR)/$(TARGET) $(OBJS)
+

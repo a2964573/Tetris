@@ -1,16 +1,6 @@
-#include "Util.h"
+#include "util.h"
 
-Util::Util()
-{
-
-}
-
-Util::~Util()
-{
-
-}
-
-int Util::utilClearScreen(int os_type)
+int utilClearScreen(int os_type)
 {
     switch(os_type) {
         case OS_WINDOWS:
@@ -27,7 +17,7 @@ int Util::utilClearScreen(int os_type)
     return 0;
 }
 
-int Util::utilPrintDescription(const std::string desc)
+int utilPrintDescription(const std::string desc)
 {
     std::string description = "echo " + desc;
     system(description.c_str());
@@ -35,13 +25,13 @@ int Util::utilPrintDescription(const std::string desc)
     return 0;
 }
 
-int Util::utilInputString(std::string& output)
+int utilInputString(std::string& output)
 {
     std::getline(std::cin, output);
     return output.length();
 }
 
-int Util::utilInputChar(char& output)
+int utilInputChar(char& output)
 {
 	std::string input;
 	std::getline(std::cin, input);
@@ -50,7 +40,7 @@ int Util::utilInputChar(char& output)
 	return static_cast<int>(output);
 }
 
-int Util::utilInputNumber(int output)
+int utilInputNumber(int output)
 {
 	std::string input;
 	std::getline(std::cin, input);

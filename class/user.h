@@ -1,8 +1,8 @@
 #ifndef _USER_H
 #define _USER_H
 
-#include "../define.h"
-#include "../common.h"
+#include "../include/define.h"
+#include "../include/common.h"
 
 class User
 {

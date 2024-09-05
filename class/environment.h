@@ -1,8 +1,8 @@
 #ifndef _ENVIRONMENT_H
 #define _ENVIRONMENT_H
 
-#include "../define.h"
-#include "../common.h"
+#include "../include/define.h"
+#include "../include/common.h"
 
 class Environment
 {

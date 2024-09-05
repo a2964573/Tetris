@@ -2,7 +2,7 @@
 
 int main()
 {
-	if(main_initialization() < 0) {
+	if(main_init() < 0) {
 		return -1;
 	}
 
@@ -11,7 +11,7 @@ int main()
     return 0;
 }
 
-int main_initialization()
+int main_init()
 {
 	return 0;
 }
@@ -19,23 +19,22 @@ int main_initialization()
 int main_proceduer()
 {
 	User user;
-	Util util;
 
 	char mode;
 	int  rtn = 0;
 
 	while(true) {
-		util.utilClearScreen(user.userGetOSType());
+		utilClearScreen(user.userGetOSType());
 
 		if(user.userGetLoginState()) {
-			// rtn = loginProceduer(user);
+			rtn = login_proceduer(user);
 			if(rtn < 0) {
 				break;
 			}
 			continue;
 		} else {
-			util.utilPrintDescription("모드를 입력하시오.");
-			util.utilInputChar(mode);
+			utilPrintDescription("모드를 입력하시오.");
+			utilInputChar(mode);
 			/*
 			if(mode = MODE_SETTING) {
 				rtn = settingProceduer(user);
