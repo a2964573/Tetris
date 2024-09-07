@@ -26,7 +26,7 @@ int main_proceduer()
 	while(true) {
 		utilClearScreen(user.userGetOSType());
 
-		if(user.userGetLoginState()) {
+		if(!user.userGetLoginState()) {
 			rtn = login_proceduer(user);
 			if(rtn < 0) {
 				break;
@@ -55,6 +55,7 @@ int main_proceduer()
 			}
 			continue;
 		}
+		return 0;
 	}
 
 	return 0;

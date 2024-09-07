@@ -9,6 +9,13 @@ build
 *.dll
 */*.dll
 
+# log
+log
+*.log
+*/*.log
+*/*/*.log
+*/*/*/*.log
+
 # ignore
 *.swp
 */*.swp
@@ -16,4 +23,5 @@ build
 */*.ini
 *.env
 */*.env
+
 

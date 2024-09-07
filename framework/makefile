@@ -11,7 +11,6 @@ OBJS =	$(BUILDDIR)/login.o \
 
 CLSS =	$(CLASSDIR)/util.o \
 		$(CLASSDIR)/user.o \
-		$(CLASSDIR)/environment.o \
 		$(INTFCDIR)/client.o \
 
 TARGET = tetris.exe

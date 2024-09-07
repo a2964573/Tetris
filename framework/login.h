@@ -3,6 +3,7 @@
 
 #include "../include/common.h"
 #include "../include/define.h"
+#include "../include/packet.h"
 
 #include "../class/user.h"
 #include "../class/util.h"

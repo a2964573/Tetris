@@ -4,6 +4,8 @@
 #include "../include/define.h"
 #include "../include/common.h"
 
+#include "util.h"
+
 class User
 {
     private:

@@ -13,7 +13,6 @@ SUBDIRS  =  class interface framework
 
 OBJS = 	$(CLASSODIR)/util.o \
 		$(CLASSODIR)/user.o \
-		$(CLASSODIR)/environment.o \
 		$(INTDCODIR)/client.o \
 		$(FRMWKODIR)/login.o \
 		$(FRMWKODIR)/main.o
