@@ -16,7 +16,7 @@ typedef struct {
 #define SERVICE_LGIN001 "LGIN0001"
 typedef struct {
     char user_id      [64 ];
-    char user_pw      [256];
+    char user_pw      [512];
 } LGIN0001_IB;
 
 typedef struct {

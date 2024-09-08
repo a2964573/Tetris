@@ -1,5 +1,5 @@
 CXX = g++
-CXXFLAGS = -Wall -g
+CXXFLAGS = -Wall -lssl -lcrypto -g
 
 APPLYDIR = ../build/application
 BUILDDIR = ../build/framework
@@ -11,6 +11,7 @@ OBJS =	$(BUILDDIR)/login.o \
 
 CLSS =	$(CLASSDIR)/util.o \
 		$(CLASSDIR)/user.o \
+		$(CLASSDIR)/crypt.o \
 		$(INTFCDIR)/client.o \
 
 TARGET = tetris.exe

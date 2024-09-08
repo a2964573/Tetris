@@ -1,5 +1,5 @@
 CXX = g++
-CXXFLAGS = -Wall -g
+CXXFLAGS = -Wall -lssl -lcrypto -g
 
 CLASSODIR=	build/class
 INTDCODIR=	build/interface
@@ -13,6 +13,7 @@ SUBDIRS  =  class interface framework
 
 OBJS = 	$(CLASSODIR)/util.o \
 		$(CLASSODIR)/user.o \
+		$(CLASSODIR)/crypt.o \
 		$(INTDCODIR)/client.o \
 		$(FRMWKODIR)/login.o \
 		$(FRMWKODIR)/main.o

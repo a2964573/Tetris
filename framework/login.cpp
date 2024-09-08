@@ -64,6 +64,10 @@ int userSignup(User& user, Client& client)
 
 int userLogin(User& user, Client& client)
 {
+	utilClearScreen(user.userGetOSType());
+	utilPrintDescription(LOGIN_USER);
+
+	int rtn;
 	std::string id;
 	std::string pw;
 
@@ -73,11 +77,21 @@ int userLogin(User& user, Client& client)
 	utilPrintDescription("비밀번호 입력");
 	utilInputStringHidden(pw);
 
+	std::string encrypt_pw;
+	rtn = cryptEnRSA("public", pw, encrypt_pw);
+	if(rtn < 0) {
+		UTILLOG(LOGLV_ERR, "Password Encryption failed.");
+		return -1;
+	}
+
 	LGIN0001_IB inbound;
 	std::memset(&inbound, 0x20, sizeof(inbound));
 
-	std::memcpy(&inbound.user_id, id.data(), id.size());
-	std::memcpy(&inbound.user_pw, pw.data(), pw.size());
+	std::memcpy(&inbound.user_id, id.data()        , id.size()        );
+	std::memcpy(&inbound.user_pw, encrypt_pw.data(), encrypt_pw.size());
+
+	UTILLOG(LOGLV_DBG, "inbound user_id[%d:%.*s]", sizeof(inbound.user_id), sizeof(inbound.user_id), inbound.user_id);
+	UTILLOG(LOGLV_DBG, "inbound user_pw[%d:%.*s]", sizeof(inbound.user_pw), sizeof(inbound.user_pw), inbound.user_pw);
 
 	HEADER header;
 	memset(&header, 0x20, sizeof(header));
@@ -92,17 +106,21 @@ int userLogin(User& user, Client& client)
 
 	UTILLOG(LOGLV_DBG, "send[%d:%.*s]", blen, blen, buffer);
 
-	int rtn = requestLogin(client);
+	rtn = requestLogin(client);
 	if(rtn < 0) {
         UTILLOG(LOGLV_ERR, "Request Login failed.");
+		utilPrintDescription("로그인 실패...");
         return -1;
 	}
+	utilPrintDescription("로그인 성공!");
 
 	return 0;
 }
 
 int requestLogin(Client& client)
 {
+	utilPrintDescription("로그인 중...");
+
 	int rtn = 0;
 
 	rtn = client.clientSetServerIp("SERVER_IP");

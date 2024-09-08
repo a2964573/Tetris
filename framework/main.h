@@ -8,6 +8,7 @@
 // class
 #include "../class/util.h"
 #include "../class/user.h"
+#include "../class/crypt.h"
 
 // framework
 #include "login.h"
