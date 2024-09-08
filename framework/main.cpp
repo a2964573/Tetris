@@ -34,7 +34,7 @@ int main_proceduer()
 			continue;
 		} else {
 			utilPrintDescription("모드를 입력하시오.");
-			utilInputChar(mode);
+			utilInputChar(1, mode);
 			/*
 			if(mode = MODE_SETTING) {
 				rtn = settingProceduer(user);

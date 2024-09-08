@@ -156,20 +156,51 @@ int utilClearScreen(int os_type)
 
 int utilPrintDescription(const std::string desc)
 {
+	/*
     std::string description = "echo " + desc;
     system(description.c_str());
+	*/
+
+	std::cout << desc << std::endl;
 
     return 0;
 }
 
-int utilInputString(std::string& output)
+int utilInputStringHidden(std::string& output)
 {
+	struct termios oldt;
+	struct termios newt;
+
+    tcgetattr(STDIN_FILENO, &oldt);
+    newt = oldt;
+
+    newt.c_lflag &= ~(ECHO);
+    tcsetattr(STDIN_FILENO, TCSANOW, &newt);
+
     std::getline(std::cin, output);
+
+    tcsetattr(STDIN_FILENO, TCSANOW, &oldt);
+
+	return output.length();
+}
+
+int utilInputString(int cflag, std::string& output)
+{
+	if(cflag == 1) {
+		std::cout << "command : ";
+	}
+
+    std::getline(std::cin, output);
+
     return output.length();
 }
 
-int utilInputChar(char& output)
+int utilInputChar(int cflag, char& output)
 {
+	if(cflag == 1) {
+		std::cout << "command : ";
+	}
+
 	std::string input;
 	std::getline(std::cin, input);
 	output = input[0];
@@ -177,8 +208,12 @@ int utilInputChar(char& output)
 	return static_cast<int>(output);
 }
 
-int utilInputNumber(int output)
+int utilInputNumber(int cflag, int output)
 {
+	if(cflag == 1) {
+		std::cout << "command : ";
+	}
+
 	std::string input;
 	std::getline(std::cin, input);
     try {

@@ -23,5 +23,9 @@ log
 */*.ini
 *.env
 */*.env
+external
+*.pem
+*/*.pem
+*/*/*.pem
 
 

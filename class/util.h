@@ -12,9 +12,10 @@ int utilGetNowDate(std::string* output);
 int utilGetNowTime(std::string* output);
 int utilClearScreen(int os_type);
 int utilPrintDescription(const std::string desc);
-int utilInputString(std::string& output);
-int utilInputChar(char& output);
-int utilInputNumber(int output);
+int utilInputStringHidden(std::string& output);
+int utilInputString(int cflag, std::string& output);
+int utilInputChar(int cflag, char& output);
+int utilInputNumber(int cflag, int output);
 int utilItos(int num, std::string& output);
 
 
